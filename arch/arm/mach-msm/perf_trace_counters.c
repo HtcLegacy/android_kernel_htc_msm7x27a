@@ -10,10 +10,11 @@
  * GNU General Public License for more details.
  */
 #include <asm/thread_notify.h>
+#include <linux/cpu.h>
 #include <linux/uaccess.h>
 #include <linux/debugfs.h>
 #define CREATE_TRACE_POINTS
-#include "perf_trace_counters.h"
+#include <trace/perf_trace_counters.h>
 
 static unsigned int tp_pid_state;
 

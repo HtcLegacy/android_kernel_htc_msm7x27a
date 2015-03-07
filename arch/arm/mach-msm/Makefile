@@ -119,6 +119,9 @@ endif
 endif
 endif
 endif
+ifdef CONFIG_MACH_PICO
+        obj-y += nand_partitions.o
+endif
 
 obj-$(CONFIG_MSM_HSIC_TTY) += hsic_tty.o
 obj-$(CONFIG_MSM_SMD_TTY) += smd_tty.o
@@ -238,6 +241,12 @@ obj-$(CONFIG_ARCH_MSM7X27) += clock-pcom-lookup.o
 obj-$(CONFIG_MACH_MSM7X27_SURF) += board-msm7x27.o devices-msm7x27.o
 obj-$(CONFIG_MACH_MSM7X27_FFA) += board-msm7x27.o devices-msm7x27.o
 obj-$(CONFIG_ARCH_MSM7X27A) += clock-pcom-lookup.o devices-msm7x27a.o
+obj-$(CONFIG_MACH_PICO) += board-pico.o devices-msm7x27a.o devices_htc.o board-pico-wifi.o htc_wifi_nvs.o
+obj-$(CONFIG_MACH_PICO) += display/board-pico-panel.o
+obj-$(CONFIG_MACH_PICO) += board-pico-keypad.o
+obj-$(CONFIG_MACH_PICO) += htc_bdaddress.o board-pico-rfkill.o
+obj-$(CONFIG_MACH_PICO) += board-pico-mmc.o htc_sleep_clk.o
+obj-$(CONFIG_MACH_PICO) += htc_awb_cal.o htc_util_7x2x.o
 board-7627a-all-objs += board-msm7627a-storage.o board-msm7627a-bt.o board-msm7627a-camera.o
 board-7627a-all-objs += board-msm7627a-display.o board-msm7627a-wlan.o board-msm7627a-io.o
 obj-$(CONFIG_MACH_MSM7X27A_RUMI3) += board-msm7x27a.o board-7627a-all.o
@@ -364,6 +373,7 @@ obj-$(CONFIG_MACH_MSM7X27_SURF) += board-msm7627-regulator.o
 obj-$(CONFIG_MACH_MSM7X27_FFA) += board-msm7627-regulator.o
 obj-$(CONFIG_ARCH_MSM7X30) += board-msm7x30-regulator.o
 obj-$(CONFIG_ARCH_MSM7X27A) += board-msm7x27a-regulator.o
+obj-$(CONFIG_MACH_PICO) += board-msm7x27a-regulator.o
 endif
 
 obj-$(CONFIG_ARCH_MSM8960) += mdm2.o mdm_common.o
